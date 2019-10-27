@@ -6,7 +6,9 @@ Created on Fri Oct 18 23:50:33 2019
 @author: giudittaparolini
 """
 
-class BMW:
+from abc import abstractmethod, ABC
+
+class BMW(ABC):
     
     def __init__(self, make, model, year):
         self.make = make
@@ -19,6 +21,9 @@ class BMW:
     def stop(self):
         print ("Stopping the car")
 
+    @abstractmethod
+    def drive(self):
+        pass
 
 class ThreeSeries(BMW):
     
@@ -33,6 +38,9 @@ class ThreeSeries(BMW):
     def start(self):#overrides the method in the parent class by definying a new one, with the same name, for the child class
         super().start()#invokes the parent class' method 
         print ("Button Start")
+    
+    def drive(self):
+        print("Three Series is being driven")
 
 class FiveSeries(BMW):
     
@@ -40,6 +48,9 @@ class FiveSeries(BMW):
         #BMW.__init__(self, make, model, year)
         super().__init__(make, model, year)
         self.parkingAssistEnabled = parkingAssistEnabled
+        
+    def drive(self):
+        print("Five Series is being driven")
     
 
 bmw=ThreeSeries(True, "BMW", "328i", "2018")
@@ -51,6 +62,7 @@ print(bmw.year)
 bmw.start()
 bmw.stop()
 bmw.display()
+bmw.drive()
 
 print ("------")
 
@@ -62,3 +74,4 @@ print(bmw.year)
 
 bmw.start()
 bmw.stop()
+bmw.drive()
