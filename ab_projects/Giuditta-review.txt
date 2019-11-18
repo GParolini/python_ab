@@ -1,0 +1,64 @@
+Code Review:
+
+I reviewed your code Giuditta and its working awesome.
+Really liked the way you used comments at each step.You have used user defined functions and random function very appropriately.
+Your terminology approach towards the aim is appreciable. 
+Great job.
+
+
+Suggestion: 
+
+1.Number of Rounds:
+  you can simply store number of rounds in a variable and make use of for loop with range.
+  example:
+	no = int(input("how many times you want your loop to work"))
+	for i in range(0,no):
+		print(" loop is working ", i)
+ so here you can simply put the logic to take input from user and to call score calculating function inside the loop. 
+
+2. In random.choice() function we can directly pass list of strings. 
+   This will shorten your code i.e there will be no need of random function you used.
+   example:
+	lst = ['r','p','s']
+	computer_inp = random.choice(lst)
+
+3. you correctly used elif statement to define the rules. To make the code more optimized and for level 2 you can - make two variables to store score of player and computer individually. Then simply compare which one have greater score.
+   example:
+	
+	# to use these variables inside local function you will need to make use of global keyword concept
+	player_score = 0
+	computer_score = 0
+
+	# the below is example on how to add score according to game rule. Apply similar to other rules you defined in result function as well 
+	if player_inp = 'r' and computer_inp ='s':
+		player_score= player_score + 1
+
+	# considering you added scores according to above example
+	if player_score == computer_score:
+		print("Its a draw")
+	elif player_score > computer_score:
+		print(" player wins")
+	else:
+		print("computer wins")
+
+
+Suggestions in your code for level 2:
+
+if you implement 2nd suggestion i gave you earlier your task will become more easy.
+
+HINT - As you have to repeat the whole procedure till user ask to exit its clear you need to use a loop with condition.
+Here you can use while loop.
+
+I am mentioning an example here if you want to try loop on your own dont look below or else you can take reference form it.
+example:
+
+value = True
+while value is True:
+    print("hey")
+    new_value = int(input("1 to continue and 2 to exit"))
+    if new_value == 2:
+        value = False
+
+# this loop will stop working when value will set to False as it will not satisfy the while condition anymore. You can simply put the game logic inside the loop.
+
+Hope this helps you. Happy learning :)

@@ -24,20 +24,11 @@ print ("Player input is:", player_inp )
 #Computer input
 print ("The computer is now generating its own input")
 
-lst = [1,2,3] #list of numbers for the random extraction
+lst = ['r','p','s'] #list of the possible choices
 
 random_val = random.choice(lst)
 
-def random(random_val): #function that associates a value (r,p,s) to the random number selected
-    if random_val == 1:
-        return_inp = "r"
-    elif random_val == 2:
-        return_inp = "p"
-    else:
-        return_inp = "s"
-    return return_inp
-
-computer_inp = str(random(random_val))
+computer_inp = random_val
 
 print ("The computer input is:", computer_inp)
 
